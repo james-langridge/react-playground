@@ -32,15 +32,27 @@ export default function useUsers(sortCol?: string) {
   });
 }
 
-type UserKey = keyof User;
+type UserKey = keyof Pick<
+  User,
+  "first_name" | "last_name" | "email" | "phone_number" | "date_of_birth"
+>;
+
+export const validKeys: UserKey[] = [
+  "first_name",
+  "last_name",
+  "email",
+  "phone_number",
+  "date_of_birth",
+];
+
+export const keyMap = {
+  first_name: "First name",
+  last_name: "Last name",
+  email: "Email",
+  phone_number: "Phone",
+  date_of_birth: "DOB",
+};
 
 function isValidKey(key: string): key is UserKey {
-  const validKeys: UserKey[] = [
-    "first_name",
-    "last_name",
-    "email",
-    "phone_number",
-    "date_of_birth",
-  ];
   return validKeys.includes(key as UserKey);
 }

@@ -4,14 +4,14 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import "./style.css";
 
-import Example from "./Example";
+import Table from "./Table";
 
 const queryClient = new QueryClient();
 
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <Example />
+      <Table />
       <ReactQueryDevtools initialIsOpen />
     </QueryClientProvider>
   );
