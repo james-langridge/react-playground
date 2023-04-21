@@ -5,6 +5,7 @@
   "author": "James Langridge <jamesl@ngridge.com> (https://github.com/james-langridge)",
   "keywords": [],
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
